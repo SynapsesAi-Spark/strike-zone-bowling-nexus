@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --secondary: #EA580C;
+  --bg-app: #BFDBFE;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --radius-xl: 32px;
+  --shadow-blue: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  background-color: #f8fafc;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bg-mesh {
+  background-color: #f0f4ff;
+  background-image: radial-gradient(at 0% 0%, hsla(225, 100%, 94%, 1) 0, transparent 50%), 
+                    radial-gradient(at 50% 0%, hsla(220, 100%, 92%, 1) 0, transparent 50%), 
+                    radial-gradient(at 100% 0%, hsla(215, 100%, 90%, 1) 0, transparent 50%);
+}
+
+.app-container {
+  min-height: calc(100vh - 110px);
+  background-color: var(--bg-app);
+}
+
+.card-blur {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-xl);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.shadow-inner-sm {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* Custom Scrollbar for Desktop */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
